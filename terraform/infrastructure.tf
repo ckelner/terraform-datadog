@@ -121,8 +121,10 @@ resource "aws_instance" "web" {
   key_name = "${aws_key_pair.aws_ssh_key.key_name}"
   associate_public_ip_address = true
   tags {
-    Name = "${var.common_name}-${terraform.workspace}"
-    "Terraform" = "true"
-    "Environment" = "${terraform.workspace}"
+    "name" = "${var.common_name}-${terraform.workspace}"
+    "terraform" = "true"
+    "environment" = "${terraform.workspace}"
+    "role" = "nginx"
+    "creator" = "ckelner"
   }
 }
