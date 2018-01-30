@@ -102,15 +102,18 @@ resource "aws_instance" "web" {
     "${aws_security_group.web_sg.id}",
     "${module.http_security_group.id}"
   ]
+  # sticks this instance in a random subnet
   subnet_id = "${random_shuffle.subnet.result[0]}"
   # TODO: [ckelner] should be in it's own file and templatized
   # TODO: [ckelner] should probably use a provisoner like ansible, see the repo
   # for an example: https://github.com/ckelner/datadog-ansible-vagrant-terraform/blob/master/main.tf#L40-L60
+  # TODO: [ckelner] would be good to configre the nginx Datadog integration YAML
   user_data = <<-EOF
               #!/bin/bash
               sudo yum install nginx -y
               sudo chkconfig nginx on
               sudo service nginx start
+              # kelnerhax: rely on AWS firewalls instead, easier to manage as IaC
               sudo service iptables stop
               sudo chkconfig iptables off
               DD_API_KEY="${var.datadog_api_key}" bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/install_agent.sh)"
