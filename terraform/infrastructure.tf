@@ -31,7 +31,7 @@ module "vpc" {
 #
 module "http_security_group" {
   source      = "github.com/ckelner/tf_aws_http_sg"
-  vpc_id      = "${aws_vpc.main.id}"
+  vpc_id      = "${module.vpc.vpc_id}"
   name_prefix = "${var.common_name}-${terraform.workspace}"
   description = "For allowing HTTP Traffic to the web node"
   tags        = {
@@ -46,7 +46,7 @@ module "http_security_group" {
 resource "aws_security_group" "web_sg" {
   name_prefix = "${var.common_name}-${terraform.workspace}"
   description = "Security Group for web node SSH"
-  vpc_id      = "${aws_vpc.main.id}"
+  vpc_id      = "${module.vpc.vpc_id}"
   tags        = {
     "Terraform" = "true"
     "Environment" = "${terraform.workspace}"
@@ -88,7 +88,7 @@ resource "aws_key_pair" "aws_ssh_key" {
 # https://www.terraform.io/docs/providers/random/r/shuffle.html
 #
 resource "random_shuffle" "subnet" {
-  input = ["${module.vpc.public_subnets.*}"]
+  input = ["${module.vpc.public_subnets}"]
   result_count = 1
 }
 #
