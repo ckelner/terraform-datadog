@@ -88,7 +88,7 @@ resource "aws_key_pair" "aws_ssh_key" {
 # https://www.terraform.io/docs/providers/random/r/shuffle.html
 #
 resource "random_shuffle" "subnet" {
-  input = ["${aws_subnet.public.*.id}"]
+  input = ["${module.vpc.public_subnets.*}"]
   result_count = 1
 }
 #
