@@ -33,3 +33,11 @@ variable "aws_instance_type" {
 variable "aws_public_key_material" {
   description = "The public SSH key material to load onto the instances."
 }
+variable "datadog_api_key" {
+  description = "The Datadog API Key. This should be set via environment variable: 'export TF_VAR_DATADOG_API_KEY=<your-api-key>'"
+}
+# For example purposes
+variable "monitor_suffix" {
+  default = "Kelner Example from Terraform"
+  description = "A suffic that gets applied to end of monitor names"
+}
