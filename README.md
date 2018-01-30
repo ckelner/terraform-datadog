@@ -28,6 +28,8 @@ practice to use remote state, this repo is only for example purposes.
 ## Setup
 - Checkout this repository using git
 - Change into the [`/terraform`](/terraform) directory on the command line
+- Update variable values in [`/terraform/variables.tf`](/terraform/variables.tf)
+to meet those required by your environment
 - Define AWS authentication via Environment, Shared Creds file, etc as
 documented in the [Terraform AWS Provider
 docs](https://www.terraform.io/docs/providers/aws/index.html#environment-variables)
