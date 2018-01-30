@@ -17,8 +17,8 @@ docs](https://www.terraform.io/docs/providers/aws/index.html#environment-variabl
 - Define `DATADOG_API_KEY` and `DATADOG_APP_KEY` in environment variables per
 the [Terraform
 documentation](https://www.terraform.io/docs/providers/datadog/index.html)
-- Set `TF_VAR_DATADOG_API_KEY` in your environment. e.g. `export
-TF_VAR_DATADOG_API_KEY=<your-api-key>`
+- Set `TF_VAR_datadog_api_key` in your environment. e.g. `export
+TF_VAR_datadog_api_key="<your-api-key>"` (note the quotes `""` around the value)
 
 ## Init
 Run `terraform init` - this will pull down all modules and setup your
