@@ -9,7 +9,7 @@ terraform {
 # DD Provider: https://www.terraform.io/docs/providers/datadog/index.html
 #
 provider "datadog" {
-  # Define DATADOG_API_KEY and DATADOG_APP_KEY in your environment variables
+  # Define DATADOG_API_KEY and DATADOG_APP_KEY in environment variables
 }
 #
 # AWS Provider: https://www.terraform.io/docs/providers/aws/index.html
