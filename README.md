@@ -1,6 +1,14 @@
 # Terraform Datadog
 Monitoring as Code w/ Terraform &amp; Datadog example
 
+# Noteworthy
+- This repo does not use [Terraform
+workspaces](https://www.terraform.io/docs/state/workspaces.html); it is a best
+practice to use workspaces, this repo is only for example purposes.
+- This repo does not use [Terraform remote
+state](https://www.terraform.io/docs/state/remote.html); it is a best
+practice to use remote state, this repo is only for example purposes.
+
 # Use
 ## Init
 ```
@@ -18,21 +26,10 @@ Initializing provider plugins...
 The following providers do not have any version constraints in configuration,
 so the latest version was installed.
 
-To prevent automatic upgrades to new major versions that may contain breaking
-changes, it is recommended to add version = "..." constraints to the
-corresponding provider blocks in configuration, with the constraint strings
-suggested below.
-
 * provider.aws: version = "~> 1.8"
 * provider.datadog: version = "~> 1.0"
 
 Terraform has been successfully initialized!
 
-You may now begin working with Terraform. Try running "terraform plan" to see
-any changes that are required for your infrastructure. All Terraform commands
-should now work.
-
-If you ever set or change modules or backend configuration for Terraform,
-rerun this command to reinitialize your working directory. If you forget, other
-commands will detect it and remind you to do so if necessary.
+...
 ```

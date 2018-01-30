@@ -1,4 +1,4 @@
-# Variable file
+# Variable definitions
 # This is an example, typically you'd have a *.tfvars file per a workspace
 # and would invoke terraform using the "-var-file=<filename>.tfvars" to provide
 # the correct variables
