@@ -3,6 +3,9 @@ Infrastructure and Monitoring as Code w/ Terraform &amp; Datadog example. This
 repo will create infrastructure and monitoring resources using Terraform as
 defined within the same configuration.
 
+Be sure to watch this video of Atlassian presenting on their usage of Terraform
+and Datadog: https://vimeo.com/237934245.
+
 All terraform configuration can be found under the [`/terraform`](/terraform)
 directory. Their is no hierarchy for this example, but typically you might
 organize your terraform configuration in such a way that it gets broken into
