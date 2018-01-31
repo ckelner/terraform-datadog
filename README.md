@@ -23,6 +23,8 @@ practice to use workspaces, this repo is only for example purposes.
 - This repo does not use [Terraform remote
 state](https://www.terraform.io/docs/state/remote.html); it is a best
 practice to use remote state, this repo is only for example purposes.
+- For infrastructure definitions, see [`./infrastructure.tf`](./infrastructure.tf)
+- For monitoring definitions, see [`./monitoring.tf`](./monitoring.tf)
 
 # Use
 ## Setup
