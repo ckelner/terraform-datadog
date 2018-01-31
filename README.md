@@ -14,7 +14,7 @@ respective of their function, e.g. `infrastructure.tf` will contain the
 configuration to create AWS resources, while `monitoring.tf` will contain the
 configuration to create Datadog resources, and so on.
 
-_*This repo is only for example purposes.*_
+__*This repo is only for example purposes.*__
 
 # Noteworthy
 - This repo does not use [Terraform
