@@ -35,7 +35,14 @@ EOT
 # Datadog Monitor w/ local Module
 # https://www.terraform.io/docs/providers/datadog/r/monitor.html
 #
-module "datadog_cpu_monitor" {
-  source = "./datadog_cpu_monitor_module"
-  name   = "assets"
+module "cpu_monitor" {
+  source      = "./datadog_metric_monitor_module"
+  name        = "[${var.common_name}] {{host.name}} CPU is {{value}} - [${var.monitor_suffix}]"
+  message     = <<EOT
+  {{host.name}} CPU is high!
+  CPU has been above {{threshold}} for the last 5 minutes!
+  @pagerduty-Datadog-Demo
+EOT
+  tags        = "role:demo"
+  threshold   = 0.9
 }
