@@ -47,6 +47,7 @@ the [Terraform
 documentation](https://www.terraform.io/docs/providers/datadog/index.html)
 - Set `TF_VAR_datadog_api_key` in your environment. e.g. `export
 TF_VAR_datadog_api_key="<your-api-key>"` (note the quotes `""` around the value)
+; this is used to install the agent on an EC2 host via userdata script
 
 ## Init
 Run `terraform init` - this will pull down all modules and setup your
