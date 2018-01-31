@@ -27,6 +27,11 @@ practice to use remote state, this repo is only for example purposes.
 [`./terraform/infrastructure.tf`](./terraform/infrastructure.tf)
 - For monitoring definitions, see
 [`./terraform/monitoring.tf`](./terraform/monitoring.tf)
+- The repo will provision an AWS VPC, Subnets, NAT, security groups & rules,
+EIP, and route tables. Should you not want those items to be created you
+should delete or comment out the
+[`./terraform/infrastructure.tf`](./terraform/infrastructure.tf) file. This was
+included for example purposes only.
 
 # Use
 ## Setup
